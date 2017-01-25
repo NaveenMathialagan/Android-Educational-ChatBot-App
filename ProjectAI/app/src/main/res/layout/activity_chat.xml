@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFEBEE"
+    tools:context="com.example.naveenkumar.ai_chat.ChatActivity">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="?attr/colorPrimary"
+        android:elevation="6dp"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        android:padding="10dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="left"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ChatBot"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="right"
+            >
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Back"
+                android:background="@color/colorAccent"
+                android:id="@+id/back"
+                />
+        </LinearLayout>
+
+    </android.support.v7.widget.Toolbar>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/lrv"
+        android:layout_margin="5dp"
+        android:layout_below="@+id/toolbar"
+        >
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="440dp"
+            android:id="@+id/rv"
+            android:layout_marginBottom="5dp"
+            android:scrollbars="vertical"
+            android:paddingTop="10dp"
+            android:layout_weight="2" />
+
+        <LinearLayout
+            android:id="@+id/form"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:weightSum="1">
+
+            <EditText
+                android:id="@+id/chat_editText"
+                android:layout_width="298dp"
+                android:layout_height="60dp"
+                android:hint="Type here.."
+                android:layout_weight="1" />
+
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:onClick="send"
+                android:text="Send"
+                />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
